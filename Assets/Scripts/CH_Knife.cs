@@ -37,17 +37,12 @@ public class CH_Knife : MonoBehaviour
 
 
             ApplyForces(Vector2.down);
-            control.GameOver();
+              control.GameOver();
+           
             return;
         }
 
-        if (collision.gameObject.CompareTag("Mobi"))
-        {
-            control.sound[3].Play();
-            control.AddMobiScore();
-            collision.gameObject.SetActive(false);
-        }
-
+       
 
 
        else if (collision.gameObject.CompareTag("part"))
@@ -76,7 +71,7 @@ public class CH_Knife : MonoBehaviour
                     {
                       
                         particle.Play();
-                        StartCoroutine(control.CameraShake(control.shakeDuration, control.shakeMagnitude));
+                        //StartCoroutine(control.CameraShake(control.shakeDuration, control.shakeMagnitude));
                         control.AddScore();
                         control.sound[0].Play();
                         thrownCorrectly = true;
@@ -90,7 +85,8 @@ public class CH_Knife : MonoBehaviour
                         ApplyForces(Vector2.down);
                         control.sound[1].Play();
                         control.GameOver();
-                        
+                       
+
 
                     }
                     

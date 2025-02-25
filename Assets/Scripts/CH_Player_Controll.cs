@@ -44,9 +44,9 @@ public class CH_Player_Controll : MonoBehaviour
     private List<Color> activeCircleColors;   
     private GameObject lastActivatedFace;
     private GameObject lastActivatedMobi;
-    private float spawnchance = 1f;
+   // private float spawnchance = 1f;
     private int roundCounter = 0;
-    private int SpawnDelay = 3;
+    //private int SpawnDelay = 3;
     private bool isGameOver = false;
 
 
@@ -57,10 +57,10 @@ public class CH_Player_Controll : MonoBehaviour
     
 
 
-    [SerializeField] private Transform cameraTransform;
+  /*  [SerializeField] private Transform cameraTransform;
     [HideInInspector] public float shakeDuration = 0.2f;
     [HideInInspector] public float shakeMagnitude = 0.1f;
-
+*/
     
 
    
@@ -328,6 +328,7 @@ public class CH_Player_Controll : MonoBehaviour
             {
                
                 GameOver();
+               
             }
         }
     }
@@ -430,27 +431,30 @@ public class CH_Player_Controll : MonoBehaviour
     {
 
         yield return new WaitForSeconds(delay);
-        ResetKnives();
-       
-
-        GameOverFace.SetActive(false);
-        uiController.Open_UI(uiController.UI_Panels[3]);
+      
+      // uiController.Open_UI(uiController.UI_Panels[3]);
        
     }
 
     public void GameOver()
     {
-        if (isGameOver) return; 
+        
+        if (isGameOver) return;
+        GameManager.Instance.GameOVer();
         roundCounter = 0;
         isGameOver = true; 
        
-        uiController.UI_Panels[1].SetActive(false);
+        //uiController.UI_Panels[1].SetActive(false);
         GameManager.Instance.GameState = false;
        
         GameOverScore();
         GameOverFace.SetActive(true);
         sound[2].Play();
-        StartCoroutine(DelayedGameOver(1f));
+        ResetKnives();
+
+
+        GameOverFace.SetActive(false);
+        //StartCoroutine(DelayedGameOver(1f));
     }
 
   
@@ -571,7 +575,7 @@ public class CH_Player_Controll : MonoBehaviour
         roundCounter++;
 
         
-        if (roundCounter >= SpawnDelay)
+        /*if (roundCounter >= SpawnDelay)
         {
             roundCounter = 0; 
 
@@ -598,7 +602,7 @@ public class CH_Player_Controll : MonoBehaviour
                 lastActivatedMobi.SetActive(false);
                 lastActivatedMobi = null; 
             }
-        }
+        }*/
     }
 
 
@@ -608,10 +612,7 @@ public class CH_Player_Controll : MonoBehaviour
         scores[0].text = (int.Parse(scores[0].text) + 10).ToString();
     }
 
-    public void AddMobiScore()
-    {
-        scores[1].text = (int.Parse(scores[1].text) + 1).ToString();
-    }
+   
 
     public void Reset_Scores()
     {
@@ -635,7 +636,7 @@ public class CH_Player_Controll : MonoBehaviour
     }
 
     // camerashake
-    public IEnumerator CameraShake(float duration, float magnitude)
+   /* public IEnumerator CameraShake(float duration, float magnitude)
     {
         Vector3 originalPosition = cameraTransform.localPosition;
         float elapsed = 0.0f;
@@ -653,7 +654,7 @@ public class CH_Player_Controll : MonoBehaviour
         }
 
         cameraTransform.localPosition = originalPosition;
-    }
+    }*/
     public bool IsGameOver()
     {
         return isGameOver; 

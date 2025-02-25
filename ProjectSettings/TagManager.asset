@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Circle
+  - enemy
+  - face
+  - part
+  - Mobi
+  - end
+  - UIButton
+  - Game
+  - knife
   layers:
   - Default
   - TransparentFX
@@ -40,6 +49,21 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: pin
+    uniqueID: 2533652795
+    locked: 0
+  - name: pinCircle
+    uniqueID: 4092408677
+    locked: 0
+  - name: Circle
+    uniqueID: 568698591
+    locked: 0
+  - name: Face
+    uniqueID: 751849457
+    locked: 0
+  - name: EndFace
+    uniqueID: 1223472605
     locked: 0
   m_RenderingLayers:
   - Default
