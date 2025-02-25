@@ -1,0 +1,34 @@
+{
+    "name": "CH_Controls",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "cc3eff13-fa9c-4978-99ee-b33f856f63e3",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Button",
+                    "id": "278c0879-50cc-4973-a45c-6d0878223856",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3b5eb078-dae9-4e57-bfaa-407c1d253c4e",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

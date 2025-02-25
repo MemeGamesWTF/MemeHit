@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         GameOverScreen.SetActive(false);
         GameWinScreen.SetActive(false);
         GameState = true;
-        Player.Reset();
+      //  Player.Reset();
     }
 
     public void AddScore(float f)
